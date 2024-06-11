@@ -10,7 +10,7 @@ public class HumanPlayer extends Player {
 
     public int makeGuess() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(getName() + ", type your guess here: ");
+        System.out.println(getName() + ", enter your guess: ");
         int humanGuess = scanner.nextInt();
         getGuesses().add(humanGuess); //agrega cada jugada al historial
         return humanGuess;
