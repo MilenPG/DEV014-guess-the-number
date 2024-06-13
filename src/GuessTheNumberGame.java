@@ -16,8 +16,9 @@ public class GuessTheNumberGame {
         return this.targetNumber;
     }
     public boolean checkGuess(Player player) {
-        //Elaborar lógica con if para evaluar cada respuesta
-        //if guess === targetNumber return true
+        if (this.targetNumber != player.makeGuess()) {
+            //Elaborar lógica con if para evaluar cada respuesta
+            //if guess === targetNumber return true
         /*
         1. checkGuesses, dentro de un while, lo debo usar 2 veces: 1 para evaluar intento humanGuess y otra para computerGuess
         2. Dentro del mismo while, debo implementar condicional para ganador y fin del juego.
@@ -39,7 +40,12 @@ public class GuessTheNumberGame {
 
     * El ciclo ha de ejecutarse hasta que exista un ganador. While es el tipo de ciclo que nos permite implementar una condicional a la sucesión del ciclo (a diferencia de for q precisa un límite establecido de repeticiones, por eso no lo usamos)
     */
-        return true;
+            System.out.println("CONGRATS! You win! (ﾉ◕3◕)ﾉ ♡ *:･ﾟ✧▽ ☆ﾟ. *･｡ﾟ");
+            return true;
+        } else {
+            System.out.println("Too far...");
+          return false;
+        }
     }
 
     public static void main(String [] args) {
