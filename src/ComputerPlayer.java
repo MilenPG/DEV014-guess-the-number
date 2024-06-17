@@ -10,9 +10,10 @@ public class ComputerPlayer extends Player {
 
     public int makeGuess() {
         this.random = new Random();
-        System.out.println("Computer guess: ");
-        int computerGuess = random.nextInt(0, 100); // ? Creo q no está reconociendo el bound
-        System.out.print(computerGuess);
+        System.out.println("✧ ✧ ✧\n\nCOMPUTER guess: ");
+        int computerGuess = random.nextInt(0,100); // ? Creo q no está reconociendo el bound
+        System.out.println(computerGuess);
+        this.lastGuess = computerGuess;
         getGuesses().add(computerGuess);
         return computerGuess;
     }
