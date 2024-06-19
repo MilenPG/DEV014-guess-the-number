@@ -3,14 +3,13 @@ import java.util.ArrayList; //luego dentro de la clase donde se usará, se debe 
 import java.util.Scanner;
 
 public class GuessTheNumberGame {
-    private Random random; //atributo 1: util.Random = hacer uso de librería de Java para crear nro. aleatorio - random tiene su propio tipo de dato "Random"
-    private int targetNumber;
+    protected Random random; //atributo 1: util.Random = hacer uso de librería de Java para crear nro. aleatorio - random tiene su propio tipo de dato "Random"
+    protected int targetNumber;
 
     public GuessTheNumberGame() {
         this.random = new Random(); //estudiar uso del this - solo para atributos y métodos que estén dentro de una misma clase creada
         this.targetNumber = random.nextInt(0, 100);
     }
-
     public int getTargetNumber() {
         return this.targetNumber;
     }
