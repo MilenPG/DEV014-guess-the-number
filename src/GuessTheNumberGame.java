@@ -15,7 +15,7 @@ public class GuessTheNumberGame {
     }
     public boolean checkGuess(Player player, int targetNumber) {
         boolean endOfTheGame;
-      if (player.lastGuess == this.targetNumber) {
+      if (player.lastGuess == targetNumber) {
           endOfTheGame = true;
       }
       else {

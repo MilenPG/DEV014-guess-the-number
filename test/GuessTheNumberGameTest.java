@@ -41,9 +41,10 @@ class GuessTheNumberGameTest {
     void checkGuessTrue() {
         GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
         HumanPlayer mockedHumanPlayer = Mockito.mock(HumanPlayer.class);
-        Mockito.when(mockedHumanPlayer.makeGuess())
-                .thenReturn(40);
-        assertTrue(true == guessTheNumberGame.checkGuess(mockedHumanPlayer, 40), "Should return true if player's guess is 40 and target number is 40");
+        mockedHumanPlayer.lastGuess = 40; // Para utilizar el when, podría haber utilizado un getter.
+        //Mockito.when(mockedHumanPlayer.makeGuess())
+        //      .thenReturn(40);
+        assertTrue(guessTheNumberGame.checkGuess(mockedHumanPlayer, 40), "Should return true if player's guess is 40 and target number is 40");
 
     }
 
