@@ -13,7 +13,7 @@ public class HumanPlayer extends Player {
         System.out.println(getName().toUpperCase() + ", enter your guess: ");
         int humanGuess = scanner.nextInt();
         this.lastGuess = humanGuess;
-        getGuesses().add(humanGuess); //agrega cada jugada al historial
+        getGuesses().add(humanGuess);
         return humanGuess;
     }
 

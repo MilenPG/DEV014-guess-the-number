@@ -1,9 +1,9 @@
-import java.util.Random; //lo usaremos como atributo dentro de una clase para definir nro ganador
-import java.util.ArrayList; //luego dentro de la clase donde se usará, se debe especificar tipo de dato entre "<>", si es combinación, se dejan vacíos.
+import java.util.Random;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GuessTheNumberGame {
-    protected Random random; //atributo 1: util.Random = hacer uso de librería de Java para crear nro. aleatorio - random tiene su propio tipo de dato "Random"
+    protected Random random;
     protected int targetNumber;
 
     public GuessTheNumberGame() {
