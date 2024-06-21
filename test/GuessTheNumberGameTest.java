@@ -42,8 +42,19 @@ class GuessTheNumberGameTest {
         GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
         HumanPlayer mockedHumanPlayer = Mockito.mock(HumanPlayer.class);
         Mockito.when(mockedHumanPlayer.makeGuess())
+                .thenReturn(40);
+        assertTrue(true == guessTheNumberGame.checkGuess(mockedHumanPlayer, 40), "Should return true if player's guess is 40 and target number is 40");
+
+    }
+
+    @Test
+    @DisplayName("Testing checkGuess() return when params have different values")
+    void checkGuessFalse() {
+        GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
+        HumanPlayer mockedHumanPlayer = Mockito.mock(HumanPlayer.class);
+        Mockito.when(mockedHumanPlayer.makeGuess())
                 .thenReturn(8);
-        assertTrue(guessTheNumberGame.checkGuess(mockedHumanPlayer, 8)); //"Should return true if player's guess is 40 and target number is 40");
+        assertFalse(guessTheNumberGame.checkGuess(mockedHumanPlayer, 10), "Should return false if player's guess is 8 and target number is 10");
 
     }
 }
