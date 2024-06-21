@@ -8,12 +8,12 @@ public class GuessTheNumberGame {
 
     public GuessTheNumberGame() {
         this.random = new Random(); //estudiar uso del this - solo para atributos y métodos que estén dentro de una misma clase creada
-        this.targetNumber = random.nextInt(0, 100);
+        this.targetNumber = random.nextInt(0, 10);
     }
     public int getTargetNumber() {
         return this.targetNumber;
     }
-    public boolean checkGuess(Player player) {
+    public boolean checkGuess(Player player, int targetNumber) {
         boolean endOfTheGame;
       if (player.lastGuess == this.targetNumber) {
           endOfTheGame = true;
@@ -56,22 +56,22 @@ public class GuessTheNumberGame {
             counter++;
             System.out.println("\n---- Round " + counter + " ----");
             humanPlayer.makeGuess();
-            if (!guessTheNumberGame.checkGuess(humanPlayer)) {
+            if (!guessTheNumberGame.checkGuess(humanPlayer, guessTheNumberGame.getTargetNumber())) {
                guessTheNumberGame.clueMessage(humanPlayer);
                 computerPlayer.makeGuess();
                 guessTheNumberGame.clueMessage(computerPlayer);
-                if(guessTheNumberGame.checkGuess(computerPlayer)==true){
+                if(guessTheNumberGame.checkGuess(computerPlayer, guessTheNumberGame.getTargetNumber())==true){
                     System.out.println("\n***COMPUTER WINS * END OF THE GAME***\n Computer's attempts history: "+computerGuesses);
 
                 }
             } else {
-                System.out.println("CONGRATULATIONS! You win! (ﾉ◕3◕)ﾉ ♡ *:･ﾟ✧▽ ☆ﾟ. *･｡ﾟ");
+                System.out.println("☆ CONGRATULATIONS! ☆ You win! (ﾉ◕3◕)ﾉ ♡ *:･ﾟ✧ ▽ ﾟ. *･｡ ﾟ ☆");
                 System.out.println("\n***HUMAN WINS * END OF THE GAME***\n"+name+"'s attempts history: "+humanGuesses);
             }
          }
         while (
-                guessTheNumberGame.checkGuess(humanPlayer)==false &&
-                guessTheNumberGame.checkGuess(computerPlayer)==false
+                guessTheNumberGame.checkGuess(humanPlayer, guessTheNumberGame.getTargetNumber())==false &&
+                guessTheNumberGame.checkGuess(computerPlayer, guessTheNumberGame.getTargetNumber())==false
          );
     }
 }
